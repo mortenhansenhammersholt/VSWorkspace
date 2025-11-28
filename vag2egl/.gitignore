@@ -1,0 +1,6 @@
+# Ignore entire DSV directory and all its contents
+/DSV/
+
+# If you want to keep a placeholder file in `DSV/` (so the directory can be tracked),
+# create `.gitkeep` inside DSV and uncomment the next line:
+# !/DSV/.gitkeep
