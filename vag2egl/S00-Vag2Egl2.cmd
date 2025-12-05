@@ -15,9 +15,9 @@ rem java Vag2Egl2 BA BA > S00-Vag2Egl2.out
 rem ************************
 
 rem ********************************************
-rem * change parms in S0A-ProjectSetup.cmd file
+rem * change parms in bin\S0A-ProjectSetup.cmd file
 rem ********************************************
-call S0A-ProjectSetup.cmd
+call bin\S0A-ProjectSetup.cmd
 if %V2EPARM_TRACE%. == . echo off
 if not %V2EPARM_TRACE%. == . echo on
 

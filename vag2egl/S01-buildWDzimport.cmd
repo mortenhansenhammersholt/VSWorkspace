@@ -11,9 +11,9 @@ md temp
 :process2
 set rdir=c:\vag2egl
 rem ********************************************
-rem * change parms in S0A-ProjectSetup.cmd file
+rem * change parms in bin\S0A-ProjectSetup.cmd file
 rem ********************************************
-call S0A-ProjectSetup.cmd
+call bin\S0A-ProjectSetup.cmd
 if %V2EPARM_TRACE%. == . echo off
 if not %V2EPARM_TRACE%. == . echo on
 
@@ -28,7 +28,7 @@ rem   echo set classpath=%V2EPARM_SDPHOME%\runtimes\base_v61\lib\startup.jar;c:\
 remDSV   echo set classpath=%V2EPARM_SDPHOME%\plugins\org.eclipse.equinox.launcher_1.0.101.R34x_v20081125.jar;%V2EPARM_SDPSHAREDHOME%\plugins\com.ibm.etools.egl.vagenmigration_7.5.1.v20090612_1343.jar; >> W01-O01-WDzImport.cmd
    echo set classpath=%V2EPARM_SDPHOME%\plugins\org.eclipse.equinox.launcher_1.4.0.v20161219-1356.jar;%V2EPARM_SDPSHAREDHOME%\plugins\com.ibm.etools.egl.vagenmigration_7.5.105.v20210727_0640.jar; >> W01-O01-WDzImport.cmd
    echo cd %V2EPARM_SDPHOME% >> W01-O01-WDzImport.cmd
-   echo echo init log... ¤ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
+   echo echo init log... ï¿½ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
 
    echo if exist %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\. goto imp_done   >> W01-O01-WDzImport.cmd
    echo md %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp  >> W01-O01-WDzImport.cmd
@@ -42,7 +42,7 @@ goto check_record
    dir %V2EPARM_MODULE%\cm\item\*.esf /A:-D /B /O:N > %temp%\dir.txt
 
    for /F "eol=; tokens=1,2* delims==" %%i in (%temp%\dir.txt) do (
-     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\cm\item\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\cm-%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ¤¤ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
+     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\cm\item\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\cm-%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ï¿½ï¿½ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
      )
 
 :check_record
@@ -54,7 +54,7 @@ goto check_popup
    dir %V2EPARM_MODULE%\cm\record\*.esf /A:-D /B /O:N > %temp%\dir.txt
 
    for /F "eol=; tokens=1,2* delims==" %%i in (%temp%\dir.txt) do (
-     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\cm\record\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\cm-%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ¤¤ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
+     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\cm\record\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\cm-%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ï¿½ï¿½ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
      )
 
 :check_popup
@@ -66,7 +66,7 @@ goto fileRename_prepare
    dir %V2EPARM_MODULE%\cm\popup\*.esf /A:-D /B /O:N > %temp%\dir.txt
 
    for /F "eol=; tokens=1,2* delims==" %%i in (%temp%\dir.txt) do (
-     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\cm\popup\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ¤¤ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
+     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\cm\popup\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ï¿½ï¿½ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
      )
 
 :fileRename_prepare
@@ -76,7 +76,7 @@ rem echo call %rdir%\T03-02-extractMapg.bat all >> W01-O01-WDzImport.cmd
 
 rem ------------- if need for special handling ----------------start
 rem echo building special ones
-rem echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\table\F9ERT.esf -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\F9ERT.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ¤¤ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
+rem echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\table\F9ERT.esf -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\F9ERT.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ï¿½ï¿½ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
 rem echo ren %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\F9ERT.egl %V2EPARM_MODULE%-cm-F9ERT.egl >> W01-O01-WDzImport.cmd
 rem ------------- if need for special handling ----------------end
 
@@ -88,7 +88,7 @@ goto check_table
    dir %V2EPARM_MODULE%\cm\*.esf /A:-D /B /O:N > %temp%\dir.txt
 
    for /F "eol=; tokens=1,2* delims==" %%i in (%temp%\dir.txt) do (
-     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\cm\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\cm-%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ¤¤ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
+     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\cm\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\cm-%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ï¿½ï¿½ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
      )
 
 :check_table
@@ -100,7 +100,7 @@ goto check_mapg
    dir %V2EPARM_MODULE%\table\*.esf /A:-D /B /O:N > %temp%\dir.txt
 
    for /F "eol=; tokens=1,2* delims==" %%i in (%temp%\dir.txt) do (
-     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\table\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ¤¤ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
+     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\table\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ï¿½ï¿½ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
      )
 
 :check_mapg
@@ -116,7 +116,7 @@ goto check_esf
    dir %V2EPARM_MODULE%\mapg\*.esf /A:-D /B /O:N > %temp%\dir.txt
 
    for /F "eol=; tokens=1,2* delims==" %%i in (%temp%\dir.txt) do (
-     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\mapg\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ¤¤ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
+     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\mapg\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ï¿½ï¿½ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
      )
 
 rem -------------- must be modified to match Customer - if needed -----------start
@@ -140,7 +140,7 @@ goto no_more_to_check
    dir %V2EPARM_MODULE%\*.esf /A:-D /B /O:N > %temp%\dir.txt
 
    for /F "eol=; tokens=1,2* delims==" %%i in (%temp%\dir.txt) do (
-     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ¤¤ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
+     echo java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile %rdir%\%V2EPARM_MODULEPFX%\%%i -eglFile %V2EPARM_REPOSLOC%\%V2EPARM_PROJECT%\EGLSource\imp\%%i.egl -data %V2EPARM_REPOSLOC% -package imp -overwrite ï¿½ï¿½ %rdir%\W03-O01-WDzImport.log >> W01-O01-WDzImport.cmd
      )
 
 :no_more_to_check

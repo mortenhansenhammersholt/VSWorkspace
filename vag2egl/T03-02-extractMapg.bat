@@ -7,7 +7,7 @@ rem set path=G:\jdk1.1.8\bin;.;
 rem ********************************************
 rem * change parms in S0A-ProjectSetup.cmd file
 rem ********************************************
-rem DO NOT - call S0A-ProjectSetup.cmd
+rem DO NOT - call bin\S0A-ProjectSetup.cmd
 
 set rdir=C:\VAG2Egl 
 

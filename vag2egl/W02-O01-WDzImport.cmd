@@ -7913,6 +7913,6 @@ java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile c:\vag2e
 java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile c:\vag2egl\DSV\mapg\XSACPG.esf -eglFile C:\SDP\workspace\DSV\EGLSource\imp\XSACPG.egl -data C:\SDP\workspace -package imp -overwrite >> c:\vag2egl\W03-O01-WDzImport.log 
 java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile c:\vag2egl\DSV\mapg\XSSESG.esf -eglFile C:\SDP\workspace\DSV\EGLSource\imp\XSSESG.egl -data C:\SDP\workspace -package imp -overwrite >> c:\vag2egl\W03-O01-WDzImport.log 
 java com.ibm.etools.egl.internal.vagenmigration.batch.VGMIG -importFile c:\vag2egl\DSV\DSV.esf -eglFile C:\SDP\workspace\DSV\EGLSource\imp\DSV.egl -data C:\SDP\workspace -package imp -overwrite >> c:\vag2egl\W03-O01-WDzImport.log 
-call c:\vag2egl\T03-01-fileRenamePrepare.cmd * i-dsv 
-call c:\vag2egl\W03-O02-fileRename.cmd  
+call bin\T03-01-fileRenamePrepare.cmd * i-dsv 
+call bin\W03-O02-fileRename.cmd  
 pause 

@@ -13,7 +13,7 @@ set pref=%2%
 rem ********************************************
 rem * change parms in S0A-ProjectSetup.cmd file
 rem ********************************************
-call %rdir%\S0A-ProjectSetup.cmd
+call bin\S0A-ProjectSetup.cmd
 
 
 echo echo W03-O02-fileRename.cmd called > %rdir%\W03-O02-fileRename.cmd
